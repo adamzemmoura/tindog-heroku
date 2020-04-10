@@ -1,10 +1,9 @@
 const express = require('express')
 const app = express()
 const admin = require('firebase-admin')
-const serviceAccount = require("./serviceAccountKey.json");
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.applicationDefault(),
   databaseURL: "https://tindog-6dca7.firebaseio.com"
 });
 
